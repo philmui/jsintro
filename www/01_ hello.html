@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div><h1>Hello World!</h1></div>
+	<hr>
+	<a>Click me</a>
+	<script>
+		// modifying DOM elements
+		$("div").addClass("myclass");
+		$(document).ready(function() {
+			$("h1").css("color", "red");
+		});
+
+		// event-handling
+		$("a").click(function() {
+			$("a").slideDown(2, function() {
+				if ('undefined' === typeof numClicks) {
+					numClicks = 1
+				}
+				else {
+					numClicks++;
+				}
+				$("a").text("Click Again: " + numClicks);
+			})
+		})
+	</script>
+</body>
+</html>
